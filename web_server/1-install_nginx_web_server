@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
-# commands to  install  Nginx on web server.
-
-sudo apt-get  update
-sudo apt-get install nginx
-sudo ufw apt "Nginx HTTP"
-
-echo "Hello world!" | sudo tee /var/www/html/index.html
-
-# testing nginc configurations
-sudo nginx -t 
-
-sudo service nginx reload 
+# installs the reverse proxy - Nginx
+sudo apt update && upgrade
+sudo apt install nginx -y 
+echo "Holberton School" | sudo tee /var/www/html/index.html
+sudo service nginx start 
